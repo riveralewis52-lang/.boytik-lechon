@@ -116,19 +116,25 @@
   <section id="orderForm" class="hidden">
     <h2>Order Form</h2>
     <form>
-      <label>Name:</label>
-      <input type="text" placeholder="Enter your name">
-      <label>Location:</label>
-      <input type="text" placeholder="Enter your location">
-      <label>Cellphone No:</label>
-      <input type="text" placeholder="Enter your cellphone number">
-      <label>Price:</label>
-      <input type="text" placeholder="Enter selected price">
-      <label>Freebies:</label>
-      <input type="text" placeholder="Enter freebies (if any)">
-      <label>Downpayment:</label>
-      <input type="text" placeholder="Enter downpayment">
-      <button type="button" onclick="alert('Thank you! Your order has been recorded.')">Submit</button>
+      <form id="orderForm">
+  <label>Name :</label><input type="text" name="name" required><br>
+  <label>Location :</label><input type="text" name="location" required><br>
+  <label>Cellphone No :</label><input type="text" name="cellphone" required><br>
+  <label>Price :</label><input type="text" name="price"><br>
+  <label>Freebies :</label><input type="text" name="freebies"><br>
+  <label>Downpayment :</label><input type="text" name="downpayment"><br>
+  <button type="submit">Submit Order</button>
+</form>
+
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(event){
+    event.preventDefault(); // Prevent default page reload
+    alert("Your order has been submitted! Redirecting you to our Facebook page...");
+    // Redirect to Boytik Lechon page
+    window.location.href = "https://www.facebook.com/lechonpigbyboytik";
+  });
+</script>
+
     </form>
   </section>
 
