@@ -116,35 +116,35 @@
   <section id="orderForm" class="hidden">
     <h2>Order Form</h2>
     <form>
-      <form id="orderForm">
-  <label>Name :</label><input type="text" name="name" required><br>
-  <label>Location :</label><input type="text" name="location" required><br>
-  <label>Cellphone No :</label><input type="text" name="cellphone" required><br>
-  <label>Price :</label><input type="text" name="price"><br>
-  <label>Freebies :</label><input type="text" name="freebies"><br>
-  <label>Downpayment :</label><input type="text" name="downpayment"><br>
+     <form id="orderForm">
+  <label>Name :</label><input type="text" id="name" required><br>
+  <label>Location :</label><input type="text" id="location" required><br>
+  <label>Cellphone No :</label><input type="text" id="cellphone" required><br>
+  <label>Price :</label><input type="text" id="price"><br>
+  <label>Freebies :</label><input type="text" id="freebies"><br>
+  <label>Downpayment :</label><input type="text" id="downpayment"><br>
   <button type="submit">Submit Order</button>
 </form>
 
 <script>
   document.getElementById("orderForm").addEventListener("submit", function(event){
-    event.preventDefault(); // Prevent default page reload
-    alert("Your order has been submitted! Redirecting you to our Facebook page...");
-    // Redirect to Boytik Lechon page
-    window.location.href = "https://www.facebook.com/lechonpigbyboytik";
+    event.preventDefault();
+
+    // Collect all form data
+    const name = document.getElementById("name").value;
+    const location = document.getElementById("location").value;
+    const cellphone = document.getElementById("cellphone").value;
+    const price = document.getElementById("price").value;
+    const freebies = document.getElementById("freebies").value;
+    const downpayment = document.getElementById("downpayment").value;
+
+    // Create message text
+    const message = `Hi Boytik Lechon!%0A%0AHere is my order:%0AName: ${name}%0ALocation: ${location}%0ACellphone: ${cellphone}%0APrice: ${price}%0AFreebies: ${freebies}%0ADownpayment: ${downpayment}`;
+
+    // Redirect to Messenger with prefilled message
+    window.location.href = `https://m.me/lechonpigbyboytik?ref=${message}`;
   });
 </script>
 
-    </form>
-  </section>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.add('hidden');
-      });
-      document.getElementById(id).classList.remove('hidden');
-    }
-  </script>
 </body>
 </html>
