@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lechon Pig by Boytik</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffcc99;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #cc3300;
+      color: white;
+      padding: 15px 0;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+    }
+    nav {
+      background-color: #ff9966;
+      padding: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 15px;
+      background-color: #cc3300;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: #ff3300;
+    }
+    section {
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    img.bundle, img.pricelist {
+      width: 80%;
+      max-width: 600px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    button {
+      background-color: #cc3300;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ff3300;
+    }
+    form {
+      background-color: white;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin: 5px 0 15px 0;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="boytik pic.jpg" alt="Lechon Pig by Boytik Logo">
+    <h1>Lechon Pig by Boytik</h1>
+    <p>Malasa • Malutong • Juicy • Masarap</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('priceList')">Price List</a>
+    <a href="#" onclick="showSection('bundles')">Bundles</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Lechon Pig by Boytik!</h2>
+    <p>Located in Muzon, San Jose del Monte, Bulacan. We deliver!</p>
+    <button onclick="showSection('orderForm')">Order</button>
+  </section>
+
+  <section id="priceList" class="hidden">
+    <h2>Price List</h2>
+    <img class="pricelist" src="boytik pricelist.jpg" alt="Pricelist">
+  </section>
+
+  <section id="bundles" class="hidden">
+    <h2>Lechon + Food Bundles</h2>
+    <img class="bundle" src="boytik, bundle a.jpg" alt="Bundle A">
+    <img class="bundle" src="boytik bundle b.jpg" alt="Bundle B">
+    <img class="bundle" src="boytik bundle c.jpg" alt="Bundle C">
+    <img class="bundle" src="boytik bundle d.jpg" alt="Bundle D">
+    <img class="bundle" src="bundle e.jpg" alt="Bundle E">
+    <img class="bundle" src="bundle f.jpg" alt="Bundle F">
+    <img class="bundle" src="boytik bundle g.jpg" alt="Bundle G">
+  </section>
+
+  <section id="orderForm" class="hidden">
+    <h2>Order Form</h2>
+    <form>
+      <label>Name:</label>
+      <input type="text" placeholder="Enter your name">
+      <label>Location:</label>
+      <input type="text" placeholder="Enter your location">
+      <label>Cellphone No:</label>
+      <input type="text" placeholder="Enter your cellphone number">
+      <label>Price:</label>
+      <input type="text" placeholder="Enter selected price">
+      <label>Freebies:</label>
+      <input type="text" placeholder="Enter freebies (if any)">
+      <label>Downpayment:</label>
+      <input type="text" placeholder="Enter downpayment">
+      <button type="button" onclick="alert('Thank you! Your order has been recorded.')">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
